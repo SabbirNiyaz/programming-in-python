@@ -21,6 +21,7 @@ class Expense:
     CATEGORIES = ["Food", "Transport", "Shopping", "Health", "Education",
                   "Entertainment", "Bills", "Other"]
 
+    # Constructor crate & Assign values
     def __init__(self, expense_id: int, title: str, category: str,
                  amount: float, expense_date: str):
         self.id = expense_id
@@ -29,6 +30,7 @@ class Expense:
         self.amount = float(amount)
         self.date = expense_date
 
+    # Convert Object to Dictionary
     def to_dict(self) -> dict:
         """Convert the Expense object to a dictionary for JSON storage."""
         return {
