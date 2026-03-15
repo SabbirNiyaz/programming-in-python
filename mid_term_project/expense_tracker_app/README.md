@@ -1,4 +1,4 @@
-# 💰 Expense Tracker APP — Python Midterm Project
+#  Expense Tracker APP — Python Midterm Project
 
 **Track:** Desktop Application (GUI)  
 **Library:** tkinter (Python standard library)  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 expense_tracker_project/
@@ -24,7 +24,7 @@ expense_tracker_project/
 
 ---
 
-## ⚙️ Setup & Run Instructions
+##  Setup & Run Instructions
 
 ### 1. Create virtual environment
 ```bash
