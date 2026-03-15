@@ -97,12 +97,12 @@ pip freeze > requirements.txt
 
 ##  OOP Design
 
-| Class | Type | Responsibility |
-|---|---|---|
-| `Expense` | Entity | Represents one expense record; validates fields |
-| `ExpenseManager` | Manager/Service | All business logic (CRUD, search, sort, reports) |
-| `JsonStorage` | Storage | Load/save JSON; ID generation |
-| `ExpenseApp` | UI Controller | Builds GUI; handles events; connects UI to manager |
+| Class            | Type            | Responsibility                                     |
+|------------------|-----------------|----------------------------------------------------|               
+| `Expense`        | Entity          | Represents one expense record; validates fields    |
+| `ExpenseManager` | Manager/Service | All business logic (CRUD, search, sort, reports)   |
+| `JsonStorage`    | Storage         | Load/save JSON; ID generation                      |
+| `ExpenseApp`     | UI Controller   | Builds GUI; handles events; connects UI to manager |
 
 **Design patterns used:**
 - **Composition:** `ExpenseApp` -> `ExpenseManager` -> `JsonStorage`
