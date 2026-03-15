@@ -41,6 +41,7 @@ class Expense:
             "date": self.date
         }
 
+    # Create Object From Dictionary
     @classmethod
     def from_dict(cls, data: dict) -> "Expense":
         """Create an Expense object from a dictionary (loaded from JSON)."""
@@ -52,6 +53,7 @@ class Expense:
             expense_date=data["date"]
         )
 
+    # Static Validation Method
     @staticmethod
     def validate(title: str, category: str, amount: str, expense_date: str) -> str:
         """
