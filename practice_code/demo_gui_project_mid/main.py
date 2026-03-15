@@ -3,9 +3,8 @@ from tkinter import messagebox
 import json
 import os
 
-# --------------------------
-# 1️⃣ Entity Class
-# --------------------------
+
+# 1. Entity Class
 class Expense:
     def __init__(self, title, category, amount):
         self.title = title
@@ -20,9 +19,7 @@ class Expense:
         }
 
 
-# --------------------------
-# 2️⃣ Storage Class
-# --------------------------
+# 2. Storage Class
 class JsonStorage:
     def __init__(self, filename="data.json"):
         self.filename = filename
@@ -40,9 +37,7 @@ class JsonStorage:
             return [Expense(d["title"], d["category"], d["amount"]) for d in data]
 
 
-# --------------------------
-# 3️⃣ Manager Class
-# --------------------------
+# 3. Manager Class
 class ExpenseManager:
     def __init__(self, storage):
         self.storage = storage
@@ -65,9 +60,7 @@ class ExpenseManager:
         return [e for e in self.expenses if keyword.lower() in e.title.lower()]
 
 
-# --------------------------
-# 4️⃣ GUI Controller (Styled Only)
-# --------------------------
+# 4️. GUI Controller (Styled Only)
 class App:
     def __init__(self, root):
         self.root = root
@@ -240,9 +233,7 @@ class App:
             self.listbox.insert(tk.END, f"{e.title} | {e.category} | {e.amount}")
 
 
-# --------------------------
 # Run App
-# --------------------------
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
