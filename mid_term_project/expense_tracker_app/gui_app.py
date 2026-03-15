@@ -58,7 +58,7 @@ class ExpenseApp:
         self._build_ui()
         self._refresh_table(self.manager.get_all())
 
-    # ═══════════════════════════ UI BUILD ═══════════════════════════
+    # --------------------- UI BUILD ---------------------
 
     def _build_ui(self):
         """Build the full application layout."""
@@ -332,7 +332,8 @@ class ExpenseApp:
         self.stat_highest.config(text=f"৳{highest_amt:,.2f}")
         self.stat_count.config(text=str(r['count']))
 
-    # ═════════════════════════ FORM HELPERS ═════════════════════════
+
+    # --------------------- FORM HELPERS ---------------------
 
     def _get_form_values(self):
         return (
@@ -369,7 +370,7 @@ class ExpenseApp:
         else:
             messagebox.showerror("Error", msg)
 
-    # ══════════════════════ EVENT HANDLERS ══════════════════════════
+    # --------------------- EVENT HANDLERS ---------------------
 
     def _on_row_select(self, event):
         """When user clicks a table row, load its data into the form."""
