@@ -96,7 +96,6 @@ pip freeze > requirements.txt
 ---
 
 ##  OOP Design
-
 | Class            | Type            | Responsibility                                     |
 |------------------|-----------------|----------------------------------------------------|               
 | `Expense`        | Entity          | Represents one expense record; validates fields    |
