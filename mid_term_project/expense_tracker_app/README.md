@@ -58,18 +58,18 @@ pip freeze > requirements.txt
 
 ---
 
-## ✅ Features
+## Features
 
 ### CRUD Operations
-- ➕ Add new expense (title, category, amount, date)
-- ✏️ Edit existing expense (click row → edit form → Update)
-- 🗑️ Delete expense (with confirmation dialog)
-- 👁️ View all expenses in a sortable table
+-  Add new expense (title, category, amount, date)
+-  Edit existing expense (click row -> edit form -> Update)
+-  Delete expense (with confirmation dialog)
+-  View all expenses in a sortable table
 
 ### Search & Filter
-- 🔍 Search by title or category keyword
-- 📂 Filter by category dropdown
-- ↺ Show all records
+-  Search by title or category keyword
+-  Filter by category dropdown
+-  Show all records
 
 ### Sort
 - Sort by date, amount, or title
@@ -95,7 +95,7 @@ pip freeze > requirements.txt
 
 ---
 
-## 🏗️ OOP Design
+##  OOP Design
 
 | Class | Type | Responsibility |
 |---|---|---|
@@ -111,5 +111,5 @@ pip freeze > requirements.txt
 
 ---
 
-## 📦 Categories
+##  Categories
 Food, Transport, Shopping, Health, Education, Entertainment, Bills, Other
