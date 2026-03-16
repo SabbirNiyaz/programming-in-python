@@ -11,7 +11,7 @@ from storage import JsonStorage
 from expense import Expense
 
 
-# ─────────────────────── Colour palette ───────────────────────
+# --------------------- Colour palette ---------------------
 BG_MAIN      = "#1e1e2e"   # dark navy background
 BG_CARD      = "#2a2a3e"   # slightly lighter card surface
 BG_SIDEBAR   = "#16213e"   # sidebar/panel background
@@ -195,7 +195,7 @@ class ExpenseApp:
         right = tk.Frame(parent, bg=BG_MAIN)
         right.pack(side="left", fill="both", expand=True, pady=8)
 
-        # --- Table section ---
+        # --------------------- Table section ---------------------
         table_card = tk.Frame(right, bg=BG_CARD, bd=0)
         table_card.pack(fill="both", expand=True)
 
@@ -240,7 +240,7 @@ class ExpenseApp:
 
         self.tree.bind("<<TreeviewSelect>>", self._on_row_select)
 
-        # ── Report section ──
+        # --------------------- Report section ---------------------
         self._build_report_bar(right)
 
     def _build_report_bar(self, parent):
@@ -268,7 +268,7 @@ class ExpenseApp:
 
         self._update_report()
 
-    # ═══════════════════════ HELPER WIDGETS ═════════════════════════
+    # --------------------- HELPER WIDGETS ---------------------
 
     def _form_label(self, parent, text):
         tk.Label(parent, text=text, font=FONT_LABEL,
@@ -303,7 +303,7 @@ class ExpenseApp:
         val_label.pack(anchor="w")
         return val_label
 
-    # ═══════════════════════ TABLE MANAGEMENT ═══════════════════════
+    # --------------------- TABLE MANAGEMENT ---------------------
 
     def _refresh_table(self, expenses: list):
         """Clear and repopulate the treeview with the given expense list."""
