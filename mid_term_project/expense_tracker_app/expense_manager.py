@@ -21,7 +21,7 @@ class ExpenseManager:
         self.storage = storage
         self.expenses = self.storage.load()
 
-    # ─────────────────────────── CRUD ───────────────────────────
+    # -------------------------- CRUD --------------------------
 
     """ Add Expense """
     def add_expense(self, title: str, category: str,
@@ -80,16 +80,9 @@ class ExpenseManager:
 
     # ────────────────────── SEARCH / FILTER ──────────────────────
 
+    """ Search expenses by title or category """
     def search(self, keyword: str) -> list:
-        """
-        Search expenses by title or category (case-insensitive).
 
-        Args:
-            keyword (str): Search term.
-
-        Returns:
-            list: Matching Expense objects.
-        """
         keyword = keyword.strip().lower()
         if not keyword:
             return self.expenses
@@ -98,24 +91,16 @@ class ExpenseManager:
             if keyword in e.title.lower() or keyword in e.category.lower()
         ]
 
+    """ Filter expenses by exact category match. """
     def filter_by_category(self, category: str) -> list:
-        """Filter expenses by exact category match."""
+        
         if category == "All":
             return self.expenses
         return [e for e in self.expenses if e.category == category]
 
+    """ Sort expenses by a given field (date, amount, title) """
     def sort_by(self, expenses: list, field: str, descending: bool = False) -> list:
-        """
-        Sort expenses by a given field.
-
-        Args:
-            expenses (list): List to sort.
-            field (str): 'amount', 'date', or 'title'.
-            descending (bool): Sort direction.
-
-        Returns:
-            list: Sorted list.
-        """
+        
         valid_fields = {"amount", "date", "title"}
         if field not in valid_fields:
             return expenses
