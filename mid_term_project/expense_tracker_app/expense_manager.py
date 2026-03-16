@@ -23,14 +23,10 @@ class ExpenseManager:
 
     # ─────────────────────────── CRUD ───────────────────────────
 
+    """ Add Expense """
     def add_expense(self, title: str, category: str,
                     amount: str, expense_date: str) -> tuple:
-        """
-        Add a new expense after validation.
 
-        Returns:
-            tuple: (success: bool, message: str)
-        """
         error = Expense.validate(title, category, amount, expense_date)
         if error:
             return False, error
@@ -41,14 +37,10 @@ class ExpenseManager:
         self.storage.save(self.expenses)
         return True, f"Expense '{title}' added successfully."
 
+    """ Update Expense """
     def update_expense(self, expense_id: int, title: str, category: str,
                        amount: str, expense_date: str) -> tuple:
-        """
-        Update an existing expense by ID.
 
-        Returns:
-            tuple: (success: bool, message: str)
-        """
         error = Expense.validate(title, category, amount, expense_date)
         if error:
             return False, error
@@ -62,29 +54,25 @@ class ExpenseManager:
                 self.storage.save(self.expenses)
                 return True, f"Expense updated successfully."
 
-        return False, f"Expense with ID {expense_id} not found."
+        return False, f"Expense with ID: {expense_id} not found."
 
+    """ Delete Expense """
     def delete_expense(self, expense_id: int) -> tuple:
-        """
-        Delete an expense by ID.
 
-        Returns:
-            tuple: (success: bool, message: str)
-        """
         for expense in self.expenses:
             if expense.id == expense_id:
                 self.expenses.remove(expense)
                 self.storage.save(self.expenses)
                 return True, f"Expense '{expense.title}' deleted."
 
-        return False, f"Expense with ID {expense_id} not found."
+        return False, f"Expense with ID: {expense_id} not found."
 
+    """ Get All Expense """
     def get_all(self) -> list:
-        """Return all expenses."""
         return self.expenses
 
+    """ Get Single Expense by ID """
     def get_by_id(self, expense_id: int):
-        """Return a single Expense by ID, or None."""
         for expense in self.expenses:
             if expense.id == expense_id:
                 return expense
