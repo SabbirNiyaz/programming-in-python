@@ -5,10 +5,6 @@
 # tkinter is included with Python standard library (no pip install needed)
 # No additional external packages required beyond the standard library.
 
-# Optional: If you use customtkinter instead of tkinter, uncomment below:
-# customtkinter==5.2.2
-
-
 # ********** Project Run Steps **********
 # step 1: git clone --filter=blob:none --sparse https://github.com/SabbirNiyaz/programming-in-python.git
 # step 2: cd programming-in-python
