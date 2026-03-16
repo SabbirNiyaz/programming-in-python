@@ -3,9 +3,9 @@ storage.py - JsonStorage Class
 Handles all data persistence using JSON file.
 """
 
-import json
-import os
-from expense import Expense
+import json # reading/writing JSON files
+import os # checking if the file exists
+from expense import Expense # convert dictionaries back into Expense objects
 
 
 class JsonStorage:
@@ -30,7 +30,10 @@ class JsonStorage:
             bool: True if saved successfully, False otherwise.
         """
         try:
+            # Convert all Expense objects to dictionaries
             data = [e.to_dict() for e in expenses]
+            
+            # Open the file in write mode and dump JSON
             with open(self.filepath, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)
             return True
