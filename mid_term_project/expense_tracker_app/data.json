@@ -5,5 +5,68 @@
     "category": "Food",
     "amount": 300.0,
     "date": "2026-03-16"
+  },
+  {
+    "id": 2,
+    "title": "Bus Fare",
+    "category": "Transport",
+    "amount": 60.0,
+    "date": "2026-03-15"
+  },
+  {
+    "id": 3,
+    "title": "T-shirt",
+    "category": "Shopping",
+    "amount": 850.0,
+    "date": "2026-03-14"
+  },
+  {
+    "id": 4,
+    "title": "Medicine",
+    "category": "Health",
+    "amount": 420.0,
+    "date": "2026-03-13"
+  },
+  {
+    "id": 5,
+    "title": "Programming Book",
+    "category": "Education",
+    "amount": 650.0,
+    "date": "2026-03-12"
+  },
+  {
+    "id": 6,
+    "title": "Cinema Ticket",
+    "category": "Entertainment",
+    "amount": 250.0,
+    "date": "2026-03-11"
+  },
+  {
+    "id": 7,
+    "title": "Internet Bill",
+    "category": "Bills",
+    "amount": 1000.0,
+    "date": "2026-03-10"
+  },
+  {
+    "id": 8,
+    "title": "Snacks",
+    "category": "Food",
+    "amount": 120.0,
+    "date": "2026-03-09"
+  },
+  {
+    "id": 9,
+    "title": "Rickshaw Ride",
+    "category": "Transport",
+    "amount": 80.0,
+    "date": "2026-03-08"
+  },
+  {
+    "id": 10,
+    "title": "Stationery",
+    "category": "Other",
+    "amount": 200.0,
+    "date": "2026-03-07"
   }
 ]
