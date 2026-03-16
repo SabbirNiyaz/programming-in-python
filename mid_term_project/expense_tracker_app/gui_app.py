@@ -43,7 +43,7 @@ class ExpenseApp:
 
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("💰 Expense Tracker")
+        self.root.title("Expense Tracker App")
         self.root.geometry("1100x680")
         self.root.minsize(900, 600)
         self.root.configure(bg=BG_MAIN)
@@ -80,7 +80,7 @@ class ExpenseApp:
         bar.pack(fill="x")
         bar.pack_propagate(False)
 
-        tk.Label(bar, text="💰 Expense Tracker",
+        tk.Label(bar, text="💰 Expense Tracker App",
                  font=FONT_TITLE, bg=BG_SIDEBAR,
                  fg=TEXT_WHITE).pack(side="left", padx=20, pady=10)
 
