@@ -195,7 +195,7 @@ class ExpenseApp:
         right = tk.Frame(parent, bg=BG_MAIN)
         right.pack(side="left", fill="both", expand=True, pady=8)
 
-        # ── Table section ──
+        # --- Table section ---
         table_card = tk.Frame(right, bg=BG_CARD, bd=0)
         table_card.pack(fill="both", expand=True)
 
