@@ -8,7 +8,7 @@
   },
   {
     "id": 2,
-    "title": "Bus Fare",
+    "title": "Bus",
     "category": "Transport",
     "amount": 60.0,
     "date": "2026-03-15"
@@ -36,7 +36,7 @@
   },
   {
     "id": 6,
-    "title": "Cinema Ticket",
+    "title": "Akash Go",
     "category": "Entertainment",
     "amount": 250.0,
     "date": "2026-03-11"
@@ -64,9 +64,9 @@
   },
   {
     "id": 10,
-    "title": "Stationery",
-    "category": "Other",
-    "amount": 200.0,
-    "date": "2026-03-07"
+    "title": "Iftar 2nd",
+    "category": "Food",
+    "amount": 1090000.0,
+    "date": "2026-03-16"
   }
 ]
