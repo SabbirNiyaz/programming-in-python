@@ -11,7 +11,7 @@ from storage import JsonStorage
 from expense import Expense
 
 
-# --------------------- Colour palette ---------------------
+# ─────────────────────── Colour palette ───────────────────────
 BG_MAIN      = "#1e1e2e"   # dark navy background
 BG_CARD      = "#2a2a3e"   # slightly lighter card surface
 BG_SIDEBAR   = "#16213e"   # sidebar/panel background
@@ -58,7 +58,7 @@ class ExpenseApp:
         self._build_ui()
         self._refresh_table(self.manager.get_all())
 
-    # --------------------- UI BUILD ---------------------
+    # ═══════════════════════════ UI BUILD ═══════════════════════════
 
     def _build_ui(self):
         """Build the full application layout."""
@@ -80,7 +80,7 @@ class ExpenseApp:
         bar.pack(fill="x")
         bar.pack_propagate(False)
 
-        tk.Label(bar, text="💰 Expense Tracker App",
+        tk.Label(bar, text="💰 Expense Tracker",
                  font=FONT_TITLE, bg=BG_SIDEBAR,
                  fg=TEXT_WHITE).pack(side="left", padx=20, pady=10)
 
@@ -195,7 +195,7 @@ class ExpenseApp:
         right = tk.Frame(parent, bg=BG_MAIN)
         right.pack(side="left", fill="both", expand=True, pady=8)
 
-        # --------------------- Table section ---------------------
+        # ── Table section ──
         table_card = tk.Frame(right, bg=BG_CARD, bd=0)
         table_card.pack(fill="both", expand=True)
 
@@ -240,7 +240,7 @@ class ExpenseApp:
 
         self.tree.bind("<<TreeviewSelect>>", self._on_row_select)
 
-        # --------------------- Report section ---------------------
+        # ── Report section ──
         self._build_report_bar(right)
 
     def _build_report_bar(self, parent):
@@ -261,14 +261,9 @@ class ExpenseApp:
         self.stat_avg      = self._stat_box(stats_frame, "Average",  "৳0.00")
         self.stat_highest  = self._stat_box(stats_frame, "Highest",  "৳0.00")
         self.stat_count    = self._stat_box(stats_frame, "Records",  "0")
-        self.btn_full_report = self._btn(
-            stats_frame, "Full Report", ACCENT, self._show_full_report
-        )
-        self.btn_full_report.pack(side="left", padx=(12, 0), pady=4)
-
         self._update_report()
 
-    # --------------------- HELPER WIDGETS ---------------------
+    # ═══════════════════════ HELPER WIDGETS ═════════════════════════
 
     def _form_label(self, parent, text):
         tk.Label(parent, text=text, font=FONT_LABEL,
@@ -303,7 +298,7 @@ class ExpenseApp:
         val_label.pack(anchor="w")
         return val_label
 
-    # --------------------- TABLE MANAGEMENT ---------------------
+    # ═══════════════════════ TABLE MANAGEMENT ═══════════════════════
 
     def _refresh_table(self, expenses: list):
         """Clear and repopulate the treeview with the given expense list."""
@@ -332,8 +327,7 @@ class ExpenseApp:
         self.stat_highest.config(text=f"৳{highest_amt:,.2f}")
         self.stat_count.config(text=str(r['count']))
 
-
-    # --------------------- FORM HELPERS ---------------------
+    # ═════════════════════════ FORM HELPERS ═════════════════════════
 
     def _get_form_values(self):
         return (
@@ -370,7 +364,7 @@ class ExpenseApp:
         else:
             messagebox.showerror("Error", msg)
 
-    # --------------------- EVENT HANDLERS ---------------------
+    # ══════════════════════ EVENT HANDLERS ══════════════════════════
 
     def _on_row_select(self, event):
         """When user clicks a table row, load its data into the form."""
@@ -445,64 +439,3 @@ class ExpenseApp:
         self.entry_search.delete(0, tk.END)
         self.combo_filter.set("All")
         self._refresh_table(self.manager.get_all())
-
-    def _show_full_report(self):
-        """Open a popup window with the full category-wise report."""
-        r = self.manager.get_report()
-
-        win = tk.Toplevel(self.root)
-        win.title("📊 Full Expense Report")
-        win.geometry("460x500")
-        win.configure(bg=BG_MAIN)
-        win.resizable(False, False)
-
-        tk.Label(win, text="📊  Full Expense Report",
-                 font=FONT_TITLE, bg=BG_MAIN, fg=TEXT_WHITE
-                 ).pack(pady=(20, 6), padx=20, anchor="w")
-        tk.Frame(win, bg=BORDER, height=1).pack(fill="x", padx=20, pady=6)
-
-        # Summary stats
-        stats = [
-            ("Total Expenses",    f"৳{r['total']:,.2f}"),
-            ("Number of Records", str(r['count'])),
-            ("Average Expense",   f"৳{r['average']:,.2f}"),
-            ("Highest Expense",
-             f"৳{r['highest'].amount:,.2f} ({r['highest'].title})"
-             if r['highest'] else "N/A"),
-            ("Lowest Expense",
-             f"৳{r['lowest'].amount:,.2f} ({r['lowest'].title})"
-             if r['lowest'] else "N/A"),
-        ]
-        for label, value in stats:
-            row = tk.Frame(win, bg=BG_CARD, pady=6, padx=14)
-            row.pack(fill="x", padx=20, pady=2)
-            tk.Label(row, text=label, font=FONT_BODY,
-                     bg=BG_CARD, fg=TEXT_DIM, width=22, anchor="w"
-                     ).pack(side="left")
-            tk.Label(row, text=value, font=("Segoe UI", 11, "bold"),
-                     bg=BG_CARD, fg=ACCENT).pack(side="right")
-
-        # Category breakdown
-        tk.Frame(win, bg=BORDER, height=1).pack(fill="x", padx=20, pady=10)
-        tk.Label(win, text="Category Breakdown",
-                 font=FONT_HEAD, bg=BG_MAIN, fg=TEXT_WHITE
-                 ).pack(padx=20, anchor="w", pady=(0, 6))
-
-        if r["category_totals"]:
-            sorted_cats = sorted(r["category_totals"].items(),
-                                 key=lambda x: x[1], reverse=True)
-            for cat, total in sorted_cats:
-                row = tk.Frame(win, bg=BG_CARD, pady=5, padx=14)
-                row.pack(fill="x", padx=20, pady=2)
-                tk.Label(row, text=cat, font=FONT_BODY,
-                         bg=BG_CARD, fg=TEXT_MAIN, width=18, anchor="w"
-                         ).pack(side="left")
-                pct = (total / r["total"] * 100) if r["total"] > 0 else 0
-                tk.Label(row, text=f"৳{total:,.2f}  ({pct:.1f}%)",
-                         font=("Segoe UI", 11, "bold"),
-                         bg=BG_CARD, fg=SUCCESS).pack(side="right")
-        else:
-            tk.Label(win, text="No data available.",
-                     font=FONT_BODY, bg=BG_MAIN, fg=TEXT_DIM).pack(pady=10)
-
-        self._btn(win, "Close", "#555570", win.destroy).pack(pady=16)
