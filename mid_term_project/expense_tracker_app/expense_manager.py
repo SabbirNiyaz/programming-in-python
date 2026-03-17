@@ -100,22 +100,19 @@ class ExpenseManager:
 
     """ Sort expenses by a given field (date, amount, title) """
     def sort_by(self, expenses: list, field: str, descending: bool = False) -> list:
-        
+
         valid_fields = {"amount", "date", "title"}
         if field not in valid_fields:
             return expenses
         return sorted(expenses, key=lambda e: getattr(e, field),
                       reverse=descending)
 
+
     # ──────────────────────── REPORTS ────────────────────────────
 
+    """ Summary report of all expenses """
     def get_report(self) -> dict:
-        """
-        Generate a summary report of all expenses.
 
-        Returns:
-            dict: Report data with totals, averages, and category breakdown.
-        """
         if not self.expenses:
             return {
                 "total": 0.0,
@@ -132,17 +129,10 @@ class ExpenseManager:
         highest = max(self.expenses, key=lambda e: e.amount)
         lowest = min(self.expenses, key=lambda e: e.amount)
 
-        category_totals = {}
-        for e in self.expenses:
-            category_totals[e.category] = (
-                category_totals.get(e.category, 0.0) + e.amount
-            )
-
         return {
             "total": round(total, 2),
             "average": round(average, 2),
             "highest": highest,
             "lowest": lowest,
-            "count": len(self.expenses),
-            "category_totals": category_totals
+            "count": len(self.expenses)
         }
