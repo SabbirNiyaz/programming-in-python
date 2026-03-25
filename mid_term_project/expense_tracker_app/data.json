@@ -68,5 +68,12 @@
     "category": "Food",
     "amount": 1090000.0,
     "date": "2026-03-16"
+  },
+  {
+    "id": 11,
+    "title": "Shirt",
+    "category": "Shopping",
+    "amount": 1650.0,
+    "date": "2026-03-19"
   }
 ]
