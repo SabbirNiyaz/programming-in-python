@@ -21,7 +21,7 @@ class ExpenseManager:
         self.storage = storage
         self.expenses = self.storage.load()
 
-    # -------------------------- CRUD --------------------------
+    # CRUD 
 
     """ Add Expense """
     def add_expense(self, title: str, category: str,
@@ -78,7 +78,7 @@ class ExpenseManager:
                 return expense
         return None
 
-    # ────────────────────── SEARCH / FILTER ──────────────────────
+    #  SEARCH / FILTER 
 
     """ Search expenses by title or category """
     def search(self, keyword: str) -> list:
@@ -108,7 +108,7 @@ class ExpenseManager:
                       reverse=descending)
 
 
-    # ──────────────────────── REPORTS ────────────────────────────
+    #  REPORTS 
 
     """ Summary report of all expenses """
     def get_report(self) -> dict:
