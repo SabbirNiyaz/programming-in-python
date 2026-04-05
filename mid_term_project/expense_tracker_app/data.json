@@ -63,17 +63,17 @@
     "date": "2026-03-08"
   },
   {
-    "id": 10,
-    "title": "Iftar 2nd",
-    "category": "Food",
-    "amount": 1090000.0,
-    "date": "2026-03-16"
-  },
-  {
     "id": 11,
     "title": "Shirt",
     "category": "Shopping",
     "amount": 1650.0,
     "date": "2026-03-19"
+  },
+  {
+    "id": 12,
+    "title": "Wifi Bill",
+    "category": "Bills",
+    "amount": 1050.0,
+    "date": "2026-04-05"
   }
 ]
