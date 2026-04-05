@@ -4,13 +4,3 @@
 
 # tkinter is included with Python standard library (no pip install needed)
 # No additional external packages required beyond the standard library.
-
-# ********** Project Run Steps **********
-# step 1: git clone --filter=blob:none --sparse https://github.com/SabbirNiyaz/programming-in-python.git
-# step 2: cd programming-in-python
-# step 3: git sparse-checkout set mid_term_project/expense_tracker_app
-# step 4: Then go to expense_tracker_app folder and open it with VSCode
-# step 5 (Create Virtual Environment): python -m venv .venv 
-# step 6 (Activate Virtual Environment): .venv\Scripts\activate 
-# step 7 (Install Requirements): pip install -r requirements.txt 
-# step 8 (Run the App): python main.py 
