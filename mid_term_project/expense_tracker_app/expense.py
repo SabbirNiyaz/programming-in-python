@@ -83,5 +83,5 @@ class Expense:
             return "Date must be in YYYY-MM-DD format (e.g. 2026-03-14)."
         return ""
 
-    def __repr__(self):
-        return f"Expense(id={self.id}, title='{self.title}', amount={self.amount})"
+    # def __repr__(self):
+    #     return f"Expense(id={self.id}, title='{self.title}', amount={self.amount})"
