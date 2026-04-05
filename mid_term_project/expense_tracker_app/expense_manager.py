@@ -21,8 +21,7 @@ class ExpenseManager:
         self.storage = storage
         self.expenses = self.storage.load()
 
-    # CRUD 
-
+    # CRUD Operations
     """ Add Expense """
     def add_expense(self, title: str, category: str,
                     amount: str, expense_date: str) -> tuple:
@@ -79,7 +78,6 @@ class ExpenseManager:
         return None
 
     #  SEARCH / FILTER 
-
     """ Search expenses by title or category """
     def search(self, keyword: str) -> list:
 
@@ -109,7 +107,6 @@ class ExpenseManager:
 
 
     #  REPORTS 
-
     """ Summary report of all expenses """
     def get_report(self) -> dict:
 
@@ -119,8 +116,7 @@ class ExpenseManager:
                 "average": 0.0,
                 "highest": None,
                 "lowest": None,
-                "count": 0,
-                "category_totals": {}
+                "count": 0
             }
 
         amounts = [e.amount for e in self.expenses]
