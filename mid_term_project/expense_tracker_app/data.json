@@ -50,7 +50,7 @@
   },
   {
     "id": 8,
-    "title": "Snacks",
+    "title": "Sn",
     "category": "Food",
     "amount": 120.0,
     "date": "2026-03-09"
@@ -75,5 +75,12 @@
     "category": "Bills",
     "amount": 1050.0,
     "date": "2026-04-05"
+  },
+  {
+    "id": 13,
+    "title": "test",
+    "category": "Food",
+    "amount": 1234556.0,
+    "date": "2026-04-06"
   }
 ]
