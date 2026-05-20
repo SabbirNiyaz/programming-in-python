@@ -1,4 +1,4 @@
-# 🐍 Programming in Python — Course Projects
+# Programming in Python — Course Projects
 
 **Student:** Sabbir Hossain Niyaz &nbsp;|&nbsp; **ID:** 22-47538-2 &nbsp;|&nbsp; **Course:** Programming in Python
 
